@@ -1,0 +1,180 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[10]:
+
+
+import pandas as pd
+names = ['Bob','Jessica','Mary','John','Mel']
+grades = [76,95,77,78,99]
+bsdegrees = [1,1,0,0,1]
+msdegrees = [2,1,0,0,0]
+phddegrees = [0,1,0,0,0]
+GradeList = zip(names,grades,bsdegrees,msdegrees,phddegrees)
+df = pd.DataFrame(data=GradeList,
+columns=['Names','Grades','bsdegrees','msdegrees','phddegrees'])
+df
+
+
+# In[26]:
+
+
+df['Grades'].count() 
+
+
+
+# In[29]:
+
+
+df['Grades'].mean()
+
+
+# In[13]:
+
+
+df['Grades'].std()
+
+
+# In[14]:
+
+
+df['Grades'].min()
+
+
+# In[15]:
+
+
+df['Grades'].max()
+
+
+# In[16]:
+
+
+df['Grades'].quantile(.25)
+
+
+# In[17]:
+
+
+df['Grades'].quantile(.5)
+
+
+# In[18]:
+
+
+df['Grades'].quantile(.75)
+
+
+# In[19]:
+
+
+df['Grades'].median()
+
+
+# In[20]:
+
+
+df['Grades'].mode()
+
+
+# In[21]:
+
+
+df['Grades'].var()
+
+
+# In[22]:
+
+
+df.var()
+
+
+# In[31]:
+
+
+df['Grades'].describe()
+
+
+# In[32]:
+
+
+df['bsdegrees'].describe()
+
+
+# In[35]:
+
+
+df['bsdegrees'].median()
+
+
+# In[36]:
+
+
+df['bsdegrees'].mode()
+
+
+# In[37]:
+
+
+df['bsdegrees'].var()
+
+
+# In[33]:
+
+
+df['msdegrees'].describe()
+
+
+# In[38]:
+
+
+df['msdegrees'].median()
+
+
+# In[40]:
+
+
+df['msdegrees'].mode()
+
+
+# In[41]:
+
+
+df['msdegrees'].var()
+
+
+# In[34]:
+
+
+df['phddegrees'].describe()
+
+
+# In[44]:
+
+
+df['phddegrees'].median()
+
+
+# In[47]:
+
+
+df['phddegrees'].mode()
+
+
+# In[49]:
+
+
+df['phddegrees'].var()
+
+
+# In[50]:
+
+
+df.groupby(["Grades"])[["phddegrees"]].describe()
+
+
+# In[ ]:
+
+
+
+
